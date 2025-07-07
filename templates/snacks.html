@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Snacks - Homemade Pickles & Snacks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#f97316",  // orange
+            lightBg: "#fffaf0"
+          },
+          fontFamily: {
+            heading: ["'Poppins'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-lightBg font-sans text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-primary text-white px-6 py-4 shadow-md flex justify-between items-center">
+    <div class="text-xl font-bold">🍘 Homemade Snacks</div>
+    <ul class="flex gap-6">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="cart.html">Cart 🛒</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Title -->
+  <div class="text-center mt-6 mb-4">
+    <h2 class="text-3xl font-bold">Snacks</h2>
+  </div>
+
+  <!-- Snacks Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
+
+    <!-- Banana Chips -->
+    <div class="bg-white shadow rounded-lg p-4 text-center">
+      <img src="/static/images/Banana Chips.jpg" alt="Banana Chips" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-bold mt-3">Banana Chips</h3>
+      <p>Crispy and golden, our banana chips are made from fresh ripe bananas for a perfect crunch.</p>
+      <p class="text-orange-500 text-lg font-semibold">250g-₹100</p>
+      <button onclick="addToCart('Banana Chips', '₹100')" class="mt-2 bg-primary text-white px-4 py-2 rounded hover:bg-orange-600">
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Aam Papad -->
+    <div class="bg-white shadow rounded-lg p-4 text-center">
+      <img src="/static/images/Aam papad.jpg" alt="Aam Papad" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-bold mt-3">Aam Papad</h3>
+      <p>Sweet & tangy mango leather, sun-dried to perfection. A summer treat with no preservatives.</p>
+      <p class="text-orange-500 text-lg font-semibold">250g-₹80</p>
+      <button onclick="addToCart('Aam Papad', '₹80')" class="mt-2 bg-primary text-white px-4 py-2 rounded hover:bg-orange-600">
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Chekka Pakodi -->
+    <div class="bg-white shadow rounded-lg p-4 text-center">
+      <img src="/static/images/Chekka Pakodi.jpg" alt="Chekka Pakodi" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-bold mt-3">Chekka Pakodi</h3>
+      <p>Deep-fried spicy gram flour snack, delivering crunch and savory flavor in every bite.</p>
+      <p class="text-orange-500 text-lg font-semibold">250g-₹110</p>
+      <button onclick="addToCart('Chekka Pakodi', '₹110')" class="mt-2 bg-primary text-white px-4 py-2 rounded hover:bg-orange-600">
+        Add to Cart
+      </button>
+    </div>
+
+  </div>
+
+  <!-- JS to Store Items in Cart -->
+  <script>
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} added to cart!`);
+    }
+  </script>
+
+</body>
+</html>

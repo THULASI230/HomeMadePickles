@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Non-Veg Pickles - Homemade Pickles & Snacks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#f97316",
+            lightBg: "#fffaf0"
+          },
+          fontFamily: {
+            heading: ["'Poppins'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-lightBg font-sans text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-primary text-white px-6 py-4 shadow-md flex justify-between items-center">
+    <div class="text-xl font-bold">🍖 Non-Veg Pickles</div>
+    <ul class="flex gap-6">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="cart.html">Cart 🛒</a></li>
+    </ul>
+  </nav>
+
+  <!-- Title -->
+  <div class="text-center mt-6 mb-4">
+    <h2 class="text-3xl font-bold">Non-Veg Pickles</h2>
+  </div>
+
+  <!-- Products -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-6">
+
+    <!-- Chicken Pickle -->
+    <div class="bg-white shadow rounded-lg p-4 text-center">
+      <img src="/static/images/chicken pickle.webp" alt="Chicken Pickle" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-bold mt-3">Chicken Pickle</h3>
+      <p>Spicy Chicken Pickle:A Test of Home in Every Bit.</p>
+      <p class="text-orange-500 text-lg font-semibold">250g-₹300</p>
+      <button onclick="addToCart('Chicken Pickle', '₹300')" class="mt-2 bg-primary text-white px-4 py-2 rounded hover:bg-orange-600">
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Fish Pickle -->
+    <div class="bg-white shadow rounded-lg p-4 text-center">
+      <img src="/static/images/Fish pickle.webp" alt="Fish Pickle" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-bold mt-3">Fish Pickle</h3>
+      <p>Tangy and spicy.made with succulent fish pieces and traditional spices.</p>
+      <p class="text-orange-500 text-lg font-semibold">250g-₹250</p>
+      <button onclick="addToCart('Fish Pickle', '₹250')" class="mt-2 bg-primary text-white px-4 py-2 rounded hover:bg-orange-600">
+        Add to Cart
+      </button>
+    </div>
+
+    <!-- Mutton Pickle -->
+    <div class="bg-white shadow rounded-lg p-4 text-center">
+      <img src="/static/images/Mutton pickle.webp" alt="Mutton Pickle" class="w-full h-40 object-cover rounded">
+      <h3 class="text-xl font-bold mt-3">Mutton Pickle</h3>
+      <p>Rich mutton pickle cooked with tangy gongura leaves and savory spices.</p>
+      <p class="text-orange-500 text-lg font-semibold">250g-₹330</p>
+      <button onclick="addToCart('Mutton Pickle', '₹330')" class="mt-2 bg-primary text-white px-4 py-2 rounded hover:bg-orange-600">
+        Add to Cart
+      </button>
+    </div>
+
+  </div>
+
+  <!-- JavaScript to Handle Add to Cart -->
+  <script>
+    function addToCart(name, price) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({ name, price });
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(name + " added to cart!");
+    }
+  </script>
+
+</body>
+</html>

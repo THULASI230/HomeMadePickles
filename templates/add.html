@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Product - Homemade Pickles & Snacks</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8e1; /* light yellow */
+    }
+
+    header {
+      background-color: orange;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(255, 165, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: orange;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ffc107;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background-color: orange;
+      border: none;
+      color: white;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: darkorange;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Add New Product</h1>
+  </header>
+
+  <div class="container">
+    <h2>Enter Product Details</h2>
+    <form method="POST">
+      <label for="name">Product Name</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="price">Price (₹)</label>
+      <input type="number" id="price" name="price" required />
+
+      <label for="category">Category</label>
+      <select name="category" id="category">
+        <option value="veg">Veg Pickles</option>
+        <option value="nonveg">Non-Veg Pickles</option>
+        <option value="snack">Snacks</option>
+      </select>
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" rows="3"></textarea>
+
+      <label for="image_url">Image URL</label>
+      <input type="url" id="image_url" name="image_url" required />
+
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout - Homemade Pickles & Snacks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#f97316',
+            background: '#fff7ed'
+          },
+          fontFamily: {
+            body: ["'Open Sans'", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background font-body text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-primary text-white p-4 text-center font-bold text-xl">
+    Checkout - Homemade Pickles & Snacks
+  </header>
+
+  <!-- Main Checkout Section -->
+  <main class="max-w-3xl mx-auto mt-8 p-6 bg-white rounded shadow">
+    <h2 class="text-2xl font-bold mb-4 text-orange-600">Your Order Summary</h2>
+    <div id="checkout-items" class="space-y-4"></div>
+
+    <div class="text-right mt-6 text-xl font-semibold">
+      Total: ₹<span id="total-price">0</span>
+    </div>
+
+    <div class="text-right mt-4">
+      <button onclick="placeOrder()"
+              class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded font-semibold">
+        Confirm & Place Order
+      </button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-black text-white text-center py-4 mt-10">
+    &copy; 2025 Homemade Pickles & Snacks. All rights reserved.
+  </footer>
+
+  <!-- Script -->
+  <script>
+    const itemsContainer = document.getElementById("checkout-items");
+    const totalPriceSpan = document.getElementById("total-price");
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCheckout() {
+      if (cart.length === 0) {
+        itemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+        totalPriceSpan.textContent = "0";
+        return;
+      }
+
+      let total = 0;
+      let html = '';
+
+      cart.forEach((item) => {
+        const price = parseInt(item.price.replace("₹", ""));
+        total += price;
+
+        html += `
+          <div class="flex justify-between border-b pb-2">
+            <span>${item.name}</span>
+            <span>${item.price}</span>
+          </div>
+        `;
+      });
+
+      itemsContainer.innerHTML = html;
+      totalPriceSpan.textContent = total;
+    }
+
+    function placeOrder() {
+      if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+      }
+
+      // Simulate sending to server (replace with real API call)
+      fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items: cart })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("✅ Order placed successfully!");
+        localStorage.removeItem("cart");
+        window.location.href = "success.html";  // Go to success page
+      })
+      .catch(err => {
+        alert("❌ Failed to place order.");
+        console.error(err);
+      });
+    }
+
+    renderCheckout();
+  </script>
+</body>
+</html>

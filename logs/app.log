@@ -1,0 +1,51 @@
+2025-07-03 11:50:16,631 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 11:50:16,631 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 11:50:16,633 - INFO -  * Restarting with stat
+2025-07-03 11:50:21,481 - WARNING -  * Debugger is active!
+2025-07-03 11:50:21,487 - INFO -  * Debugger PIN: 307-134-733
+2025-07-03 11:50:21,596 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:21] "GET / HTTP/1.1" 200 -
+2025-07-03 11:50:21,743 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:21] "GET /static/images/NonVeg%20%20Pickles.webp HTTP/1.1" 200 -
+2025-07-03 11:50:21,745 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:21] "GET /static/images/Veg%20Pickles.jpg HTTP/1.1" 200 -
+2025-07-03 11:50:22,144 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:22] "GET /static/images/Snacks.webp HTTP/1.1" 200 -
+2025-07-03 11:50:22,637 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:22] "[35m[1mGET /static/images/.jpg HTTP/1.1[0m" 500 -
+2025-07-03 11:50:27,594 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:27] "GET /veg-pickles.html HTTP/1.1" 200 -
+2025-07-03 11:50:27,637 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:27] "GET /static/images/mango%20pickle.webp HTTP/1.1" 200 -
+2025-07-03 11:50:27,639 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:27] "GET /static/images/Tomato%20pickle.webp HTTP/1.1" 200 -
+2025-07-03 11:50:27,658 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:27] "GET /static/images/Lemon%20pickle.jpg HTTP/1.1" 200 -
+2025-07-03 11:50:35,112 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:35] "GET /nonveg-pickles.html HTTP/1.1" 200 -
+2025-07-03 11:50:35,144 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:35] "GET /static/images/chicken%20pickle.webp HTTP/1.1" 200 -
+2025-07-03 11:50:35,154 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:35] "GET /static/images/Fish%20pickle.webp HTTP/1.1" 200 -
+2025-07-03 11:50:35,176 - INFO - 127.0.0.1 - - [03/Jul/2025 11:50:35] "GET /static/images/Mutton%20pickle.webp HTTP/1.1" 200 -
+2025-07-03 11:51:29,816 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 11:51:29,816 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 11:51:29,817 - INFO -  * Restarting with stat
+2025-07-03 11:51:34,676 - WARNING -  * Debugger is active!
+2025-07-03 11:51:34,682 - INFO -  * Debugger PIN: 307-134-733
+2025-07-03 11:51:39,526 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:39] "GET / HTTP/1.1" 200 -
+2025-07-03 11:51:39,733 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:39] "[36mGET /static/images/NonVeg%20%20Pickles.webp HTTP/1.1[0m" 304 -
+2025-07-03 11:51:39,741 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:39] "[36mGET /static/images/Veg%20Pickles.jpg HTTP/1.1[0m" 304 -
+2025-07-03 11:51:40,117 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:40] "[36mGET /static/images/Snacks.webp HTTP/1.1[0m" 304 -
+2025-07-03 11:51:40,172 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:40] "[35m[1mGET /static/images/.jpg HTTP/1.1[0m" 500 -
+2025-07-03 11:51:46,431 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:46] "GET /veg-pickles.html HTTP/1.1" 200 -
+2025-07-03 11:51:46,471 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:46] "[36mGET /static/images/mango%20pickle.webp HTTP/1.1[0m" 304 -
+2025-07-03 11:51:46,472 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:46] "[36mGET /static/images/Tomato%20pickle.webp HTTP/1.1[0m" 304 -
+2025-07-03 11:51:46,486 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:46] "[36mGET /static/images/Lemon%20pickle.jpg HTTP/1.1[0m" 304 -
+2025-07-03 11:51:55,891 - INFO - 127.0.0.1 - - [03/Jul/2025 11:51:55] "GET /login.html HTTP/1.1" 200 -
+2025-07-03 13:13:01,283 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-03 13:13:01,284 - INFO - [33mPress CTRL+C to quit[0m
+2025-07-03 13:13:01,286 - INFO -  * Restarting with stat
+2025-07-03 13:13:06,275 - WARNING -  * Debugger is active!
+2025-07-03 13:13:06,282 - INFO -  * Debugger PIN: 307-134-733
+2025-07-03 13:13:09,165 - INFO - 127.0.0.1 - - [03/Jul/2025 13:13:09] "GET / HTTP/1.1" 200 -
+2025-07-03 13:13:09,420 - INFO - 127.0.0.1 - - [03/Jul/2025 13:13:09] "[36mGET /static/images/Veg%20Pickles.jpg HTTP/1.1[0m" 304 -
+2025-07-03 13:13:09,436 - INFO - 127.0.0.1 - - [03/Jul/2025 13:13:09] "[36mGET /static/images/NonVeg%20%20Pickles.webp HTTP/1.1[0m" 304 -
+2025-07-03 13:13:09,730 - INFO - 127.0.0.1 - - [03/Jul/2025 13:13:09] "[36mGET /static/images/Snacks.webp HTTP/1.1[0m" 304 -
+2025-07-03 13:13:09,789 - INFO - 127.0.0.1 - - [03/Jul/2025 13:13:09] "[35m[1mGET /static/images/.jpg HTTP/1.1[0m" 500 -
+2025-07-03 13:34:19,739 - INFO - 127.0.0.1 - - [03/Jul/2025 13:34:19] "GET / HTTP/1.1" 200 -
+2025-07-03 13:34:19,796 - INFO - 127.0.0.1 - - [03/Jul/2025 13:34:19] "[36mGET /static/images/Veg%20Pickles.jpg HTTP/1.1[0m" 304 -
+2025-07-03 13:34:19,799 - INFO - 127.0.0.1 - - [03/Jul/2025 13:34:19] "[36mGET /static/images/NonVeg%20%20Pickles.webp HTTP/1.1[0m" 304 -
+2025-07-03 13:34:20,114 - INFO - 127.0.0.1 - - [03/Jul/2025 13:34:20] "[36mGET /static/images/Snacks.webp HTTP/1.1[0m" 304 -
+2025-07-03 13:34:20,196 - INFO - 127.0.0.1 - - [03/Jul/2025 13:34:20] "[35m[1mGET /static/images/.jpg HTTP/1.1[0m" 500 -

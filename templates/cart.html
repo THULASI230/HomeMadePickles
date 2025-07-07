@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cart - Homemade Pickles & Snacks</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#f97316",
+            bgLight: "#fffaf0"
+          },
+          fontFamily: {
+            heading: ["'Poppins'", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-bgLight text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-primary text-white px-6 py-4 flex justify-between items-center shadow-md">
+    <div class="text-xl font-bold">🛒 Your Cart</div>
+    <ul class="flex gap-6">
+      <li><a href="home.html" class="hover:underline">Home</a></li>
+      <li><a href="veg-pickles.html" class="hover:underline">Veg Pickles</a></li>
+      <li><a href="nonveg-pickles.html" class="hover:underline">Non-Veg Pickles</a></li>
+      <li><a href="snacks.html" class="hover:underline">Snacks</a></li>
+    </ul>
+  </nav>
+
+  <!-- Cart Content -->
+  <div class="max-w-3xl mx-auto p-6">
+    <h2 class="text-2xl font-bold mb-4 text-center">Cart Items</h2>
+    <div id="cart-container" class="space-y-4"></div>
+
+    <!-- Total Price -->
+    <div id="total-price" class="text-xl font-semibold text-right mt-6"></div>
+
+    <!-- Cart Buttons -->
+    <div class="flex justify-between mt-6">
+      <button onclick="clearCart()" class="bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700">
+        Clear Cart
+      </button>
+      <button onclick="placeOrder()" class="bg-primary text-white px-4 py-2 rounded hover:bg-orange-600">
+        Place Order
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 bg-gray-100 mt-10 text-sm">
+    © 2025 Homemade Pickles & Snacks. All rights reserved.
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    const cartContainer = document.getElementById("cart-container");
+    const totalPriceEl = document.getElementById("total-price");
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function renderCart() {
+      if (cart.length === 0) {
+        cartContainer.innerHTML = "<p class='text-center'>Your cart is empty.</p>";
+        totalPriceEl.textContent = "";
+        return;
+      }
+
+      let html = '';
+      let total = 0;
+
+      cart.forEach((item, index) => {
+        const price = parseInt(item.price.replace("₹", ""));
+        total += price;
+
+        html += `
+          <div class="flex justify-between items-center bg-white p-4 shadow rounded">
+            <div>
+              <h3 class="font-bold">${item.name}</h3>
+              <p class="text-gray-600">${item.price}</p>
+            </div>
+            <button onclick="removeItem(${index})" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600">
+              Remove
+            </button>
+          </div>
+        `;
+      });
+
+      cartContainer.innerHTML = html;
+      totalPriceEl.textContent = `Total: ₹${total}`;
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      renderCart();
+    }
+
+    function clearCart() {
+      cart = [];
+      localStorage.removeItem("cart");
+      renderCart();
+    }
+
+    function placeOrder() {
+      if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+      }
+
+      // Example POST request (if using Flask or backend)
+      fetch("http://localhost:5000/api/orders", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ items: cart })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert("Order placed successfully!");
+        clearCart();
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Failed to place order.");
+      });
+    }
+
+    renderCart();
+  </script>
+
+</body>
+</html>
