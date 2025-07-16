@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Server Error - HomeMade Pickles & Snacks</title>
+    <style>
+        body {
+            background-color: #fff3f3;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: #b71c1c;
+        }
+        h1 {
+            font-size: 4em;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #b71c1c;
+            background-color: #ffcdd2;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        a:hover {
+            background-color: #ef9a9a;
+        }
+    </style>
+</head>
+<body>
+    <h1>500 - Oh No!</h1>
+    <p>Something spicy went wrong in our kitchen!</p>
+    <p><a href="{{ url_for('home') }}">Return to Safety</a></p>
+</body>
+</html>

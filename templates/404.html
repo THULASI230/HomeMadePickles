@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page Not Found - HomeMade Pickles & Snacks</title>
+    <style>
+        body {
+            background-color: #fff3e0;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 50px;
+            color: #5d4037;
+        }
+        h1 {
+            font-size: 4em;
+        }
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #d84315;
+            background-color: #ffe0b2;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        a:hover {
+            background-color: #ffcc80;
+        }
+    </style>
+</head>
+<body>
+    <h1>404 - Uh Oh!</h1>
+    <p>Looks like the pickles you're looking for rolled off the shelf!</p>
+    <p><a href="{{ url_for('home') }}">Go Back to Home</a></p>
+</body>
+</html>
